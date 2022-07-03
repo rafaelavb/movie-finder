@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Nav from './Nav'
 import SearchArea from './SearchArea'
+import MovieList from './MovieList'
 
 class App extends Component {
   constructor() {
@@ -28,7 +29,6 @@ class App extends Component {
   }
 
   handleChange = (e) => {
-    // console.log('i am the handle CHANGE')
     this.setState({ searchTerm: e.target.value })
   }
 
@@ -40,6 +40,7 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />
+        <MovieList movies={this.state.movies} />
       </div>
     )
   }

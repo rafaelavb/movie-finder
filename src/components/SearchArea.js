@@ -1,13 +1,18 @@
 import React from 'react'
+// import { AST_PropAccess } from 'terser'
 
-const SearchArea = () => {
+const SearchArea = (props) => {
   return (
     <div className="container">
       <div className="row">
-        <section classsName="col s4 offset-s4">
-          <form action="">
+        <section>
+          <form action="" onSubmit={props.handleSubmit}>
             <div className="input-field">
-              <input placeholder="Search movie" type="text" />
+              <input
+                placeholder="Search movie"
+                type="text"
+                onChange={props.handleChange}
+              />
             </div>
           </form>
         </section>
